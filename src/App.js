@@ -49,7 +49,7 @@ function App() {
       alert("Word not found");
     }
 
-    if(currentWord == correctWord){
+    if(currentWord === correctWord){
       setGameOver({gameOver: true, guessedWord: true});
       return;
     }

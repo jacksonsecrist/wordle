@@ -15,6 +15,7 @@ function App() {
   const [gameOver, setGameOver] = useState({gameOver: false, guessedWord: false});
   const [correctWord, setCorrectWord] = useState("");
 
+  //get word set
   useEffect(() => {
     generateWordSet().then((words) => {
       setWordSet(words.wordSet);
@@ -22,6 +23,7 @@ function App() {
     });
   }, []);
 
+  //key handling functions
   const onSelectLetter = (keyVal) => {
     if(currAttempt.letterPos > 4) return;
     const newBoard = [...board];
@@ -58,6 +60,8 @@ function App() {
       setGameOver({gameOver: true, guessedWord: false});
     }
   };
+
+  
   return (
     <div className="App">
       <nav>
